@@ -1,0 +1,696 @@
+#header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px #555 solid;
+}
+#header > a.logo {
+  font-size: 20px;
+  color: #000;
+  margin-left: 50px;
+  transition: 0.3s;
+}
+#header > a.logo:hover {
+  color: #2ABAFF;
+}
+#header .logout {
+  border: 1px #ccc solid;
+  margin-right: 50px;
+  color: #333;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+}
+
+#sideBar {
+  min-width: 200px;
+  height: 100%;
+  min-height: calc(100vh - 50px);
+  background-color: #313131;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+#sideBar > .userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#sideBar > .userInfo > i {
+  color: #fff;
+  font-size: 45px;
+  margin-bottom: 8px;
+}
+#sideBar > .userInfo > h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+#sideBar > .userInfo > p {
+  font-size: 14px;
+}
+#sideBar > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#sideBar > ul > a {
+  width: 175px;
+  height: 55px;
+  text-align: center;
+  background-color: #70797A;
+  color: #fff;
+  line-height: 51px;
+  margin-top: 21px;
+  border-radius: 10px;
+  border: 2px #70797A solid;
+  transition: 0.3s;
+  font-weight: 550;
+}
+#sideBar > ul > a.focus {
+  border-color: #29BAFF;
+  color: #000;
+  background-color: #fff;
+}
+#sideBar > ul > a:hover {
+  background-color: #29BAFF;
+  color: #000;
+  border-color: #000;
+}
+
+#gameManagement {
+  width: 100%;
+}
+#gameManagement > .title {
+  width: 95%;
+  border-top: 2px #8295C3 solid;
+  border-bottom: 2px #8295C3 solid;
+  padding: 8px 0;
+  font-size: 32px;
+  text-align: center;
+  margin: 12px auto;
+  font-weight: 500;
+}
+#gameManagement > .ivu-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px #dcdee2 solid;
+  border-radius: 8px;
+  width: 95%;
+  margin: 20px auto;
+  padding: 16px;
+  transition: 0.3s;
+}
+#gameManagement > .ivu-body:hover {
+  box-shadow: 0px 3px 5px #dcdee2;
+}
+#gameManagement > .ivu-body > .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#gameManagement > .ivu-body > .left > div {
+  margin: 0 10px;
+}
+#gameManagement > .ivu-body > .left > div p {
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 3px;
+}
+#gameManagement > .ivu-body > .left > div p.loading {
+  width: 148px;
+  text-align: center;
+  line-height: 32px;
+  height: 32px;
+  background-color: #29BAFF;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+}
+#gameManagement > .ivu-body > .left > div select {
+  background-color: #29BAFF;
+  color: #fff;
+  width: 148px;
+  height: 32px;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  line-height: 32px;
+  text-align: center;
+  padding: 0;
+}
+#gameManagement > .ivu-body > .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#gameManagement > .ivu-body > .right > button {
+  border-radius: 25px;
+  color: #c5c8ce;
+  width: 128px;
+  height: 40px;
+  background-color: #dcdee2;
+  cursor: not-allowed;
+  outline: 0;
+  font-size: 12px;
+  margin: 0 10px;
+}
+#gameManagement > .ivu-body > .right > button.open {
+  background-color: #2ABAFF;
+  color: #fff;
+  cursor: pointer;
+}
+#gameManagement > .ivu-body > .right > button.open.unlock {
+  background-color: #4C67A8;
+}
+#gameManagement > .ivu-body > .right > button.updatelock, #gameManagement > .ivu-body > .right > button.reduction {
+  display: none;
+}
+#gameManagement > .content {
+  width: 100%;
+  display: block;
+}
+#gameManagement > .content > .gameName {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#gameManagement > .content > .gameName h2 {
+  width: 350px;
+  height: 45px;
+  border-radius: 50px;
+  border: 3px #29baff solid;
+  text-align: center;
+  line-height: 39px;
+  font-weight: 500;
+  color: #222;
+  font-size: 22px;
+}
+#gameManagement > .content .tableBox {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#gameManagement > .content .tableBox table {
+  width: 100%;
+}
+#gameManagement > .content .tableBox table td {
+  padding: 15px;
+}
+#gameManagement > .content .tableBox table td > .drawInfo {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 60px;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .left h4 {
+  width: 137px;
+  height: 40px;
+  background-color: #e3e3e3;
+  text-align: center;
+  line-height: 40px;
+  font-size: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .left select {
+  width: 137px;
+  height: 35px;
+  color: #fff;
+  background-color: #29BAFF;
+  border: none;
+  font-size: 12px;
+  padding: 0;
+  text-align: center;
+  outline: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .left select.open {
+  cursor: pointer;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .center button {
+  width: 128px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #29BAFF;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 25px;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .center button.lock {
+  cursor: not-allowed;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .right button {
+  width: 128px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #29BAFF;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 25px;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .right button.lock {
+  cursor: not-allowed;
+}
+#gameManagement > .content .tableBox table .table-title {
+  width: 15%;
+}
+#gameManagement .theDayAnswerModal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  padding: 50px 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  display: none;
+  transition: 0.3s;
+  animation: openMoadl 0.3s linear;
+}
+@keyframes openMoadl {
+  0% {
+    opacity: 0;
+  }
+}
+#gameManagement .theDayAnswerModal > .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+#gameManagement .theDayAnswerModal > .content {
+  width: 700px;
+  padding: 15px;
+  background-color: #70797E;
+  color: #fff;
+  z-index: 999;
+  border-radius: 6px;
+  position: relative;
+}
+#gameManagement .theDayAnswerModal > .content > #closetheDayAnswerModal {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: 1px #fff solid;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+#gameManagement .theDayAnswerModal > .content > #closetheDayAnswerModal:hover {
+  color: #ccc;
+}
+#gameManagement .theDayAnswerModal > .content > .searchDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 0;
+}
+#gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch, #gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch {
+  display: flex;
+  align-items: center;
+}
+#gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch input, #gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch input {
+  color: #515a6e;
+  width: 194px;
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin: 0 5px;
+  font-size: 12px;
+}
+#gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch button, #gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch button {
+  background-color: #2d8cf0;
+  color: #fff;
+  widtH: 70px;
+  height: 32px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+#gameManagement .theDayAnswerModal > .content > .table {
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#gameManagement .theDayAnswerModal > .content > .table .thead {
+  background-color: #E3E3E3;
+  display: flex;
+  width: 100%;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tbody {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar {
+  width: 5px;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-button {
+  background: transparent;
+  border-radius: 4px;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid slategrey;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-track {
+  box-shadow: #ccc;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tr {
+  background-color: #fff;
+  transition: 0.3s;
+  display: flex;
+  width: 100%;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tr:hover {
+  background-color: #EBF7FF;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tr .td {
+  width: 25%;
+  padding: 6px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tr .td button {
+  color: #c5c8ce;
+  background-color: #f7f7f7;
+  border: #dcdee2 1px solid;
+  width: 40px;
+  height: 28px;
+  border-radius: 4px;
+  cursor: not-allowed;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tr .td button.ok {
+  width: 64px;
+  color: #fff;
+  background-color: #2D8CF0;
+  cursor: pointer;
+}
+#gameManagement .theDayAnswerModal > .content > .table .tr .td button.no {
+  width: 64px;
+}
+#gameManagement .changeResult {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  animation: openMoadl 0.3s linear;
+  display: none;
+}
+@keyframes openMoadl {
+  0% {
+    opacity: 0;
+  }
+}
+#gameManagement .changeResult > .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+#gameManagement .changeResult > .content {
+  width: 1000px;
+  height: 500px;
+  background-color: #70797E;
+  padding: 20px;
+  border-radius: 6px;
+  z-index: 1000;
+  color: #fff;
+  position: relative;
+}
+#gameManagement .changeResult > .content > #closeChangeResult {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: 1px #fff solid;
+  text-align: center;
+  line-height: 22px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+#gameManagement .changeResult > .content > #closeChangeResult:hover {
+  color: #ccc;
+}
+#gameManagement .changeResult > .content > h4 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#gameManagement .changeResult > .content input {
+  color: #000;
+}
+#gameManagement .changeResult > .content > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+#gameManagement .changeResult > .content > div.timeleft {
+  width: 140px;
+  height: 75px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+  background-color: #fff;
+  margin: 0 auto 15px;
+}
+#gameManagement .changeResult > .content > div.timeleft > p {
+  font-size: 14px;
+}
+#gameManagement .changeResult > .content > div.newBet {
+  width: 300px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow-y: scroll;
+  max-height: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+  background-color: #fff;
+  float: right;
+}
+#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar {
+  width: 5px;
+}
+#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-track {
+  background-color: #555;
+  border-radius: 10px;
+}
+#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-thumb {
+  background-color: ccc;
+}
+#gameManagement .changeResult > .content > div.newBet > p {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+#gameManagement .changeResult > .content > div.btnList {
+  float: right;
+}
+#gameManagement .changeResult > .content > div.btnList button {
+  width: 56px;
+  height: 31px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 12px;
+}
+#gameManagement .changeResult > .content > div.btnList .cancel {
+  background-color: #fff;
+  color: #111;
+}
+#gameManagement .changeResult > .content > div.btnList .submit {
+  background-color: #2ABAFF;
+  color: #fff;
+}
+#gameManagement .changeResult > .content > div > p {
+  margin-right: 10px;
+  font-size: 13px;
+}
+#gameManagement .changeResult > .content > div input[type=number] {
+  width: 125px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: not-allowed;
+}
+#gameManagement .changeResult > .content > div input[type=number].change {
+  width: 60px;
+  cursor: default;
+}
+#gameManagement .changeResult > .content > div span {
+  margin: 0 4px;
+}
+#gameManagement .changeResult > .content > div .reCalcBtn {
+  background-color: #2d8cf0;
+  color: #fff;
+  width: 80px;
+  height: 31px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+#gameManagement .modeRecord {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  animation: openMoadl 0.3s linear;
+}
+@keyframes openMoadl {
+  0% {
+    opacity: 0;
+  }
+}
+#gameManagement .modeRecord > .content {
+  width: 520px;
+  height: 600px;
+  border-radius: 5px;
+  background-color: #70797E;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#gameManagement .modeRecord > .content a#closeModeRecord {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border-radius: 50%;
+  display: block;
+  border: 1px #fff solid;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 28px;
+}
+#gameManagement .modeRecord > .content > .data {
+  width: 480px;
+  height: 480px;
+  background-color: #fff;
+}
+#gameManagement .modeRecord > .content > .data > .data-title {
+  display: flex;
+  width: 100%;
+  height: 40px;
+}
+#gameManagement .modeRecord > .content > .data > .data-title > .item {
+  width: 25%;
+  background-color: #E3E3E3;
+  color: #515A6E;
+  font-weight: 600;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+}
+#gameManagement .modeRecord > .content > .data > .data-box {
+  width: 100%;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+#gameManagement .modeRecord > .content > .data > .data-box > .data-list {
+  border-bottom: 1px #ccc solid;
+  display: flex;
+}
+#gameManagement .modeRecord > .content > .data > .data-box > .data-list > .item {
+  width: 25%;
+  min-width: 25%;
+  max-width: 25%;
+  text-align: center;
+  padding: 10px 18px;
+  font-size: 12px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#gameManagement .modeRecord > .content > .data > .data-box > .data-list > .item > p {
+  word-break: break-all;
+}
+
+#loginPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/BG_ci.fd83249.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#loginPage .center {
+  widtH: 100%;
+  padding: 50px 0;
+  min-height: 300px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loginPage .logo {
+  width: 300px;
+  margin: 0 100px;
+}
+#loginPage form {
+  margin: 0 100px;
+  width: 350px;
+}
+#loginPage form > .loginBtn {
+  width: 100%;
+  background-color: #29BAFF;
+}
